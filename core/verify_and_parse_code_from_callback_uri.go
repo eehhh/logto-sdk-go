@@ -4,13 +4,12 @@ import (
 	"errors"
 	"fmt"
 	"net/url"
-	"strings"
 )
 
 func VerifyAndParseCodeFromCallbackUri(callbackUri, redirectUri, state string) (string, error) {
-	if !strings.HasPrefix(callbackUri, redirectUri) {
-		return "", ErrCallbackUriNotMatchRedirectUri
-	}
+	// if !strings.HasPrefix(callbackUri, redirectUri) {
+	// 	return "", ErrCallbackUriNotMatchRedirectUri
+	// }
 
 	parsedUrl, urlParseError := url.Parse(callbackUri)
 	if urlParseError != nil {
